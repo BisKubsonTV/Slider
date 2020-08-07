@@ -1,0 +1,206 @@
+body {
+    height: 100vh;
+}
+
+.team {
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ccc;
+    position: relative;
+
+    & img.color {
+        position: absolute;
+        bottom: 0;
+        right: -10%;
+        height: 35%;
+        z-index: 2;
+        animation: color 4s linear infinite;
+    }
+
+    & img.grey {
+        position: absolute;
+        bottom: 0;
+        left: -80%;
+        height: 100%;
+        opacity: 0.5;
+        animation: grey 4s linear infinite;
+
+    }
+
+    & div.member {
+
+        position: absolute;
+        top: 10%;
+        right: 0;
+        left: auto;
+        width: 100%;
+        text-align: center;
+        letter-spacing: 2px;
+        animation: text 4s linear infinite;
+
+
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        h2 {
+            font-size: 2.6rem;
+        }
+    }
+}
+
+// Animacje
+@keyframes color {
+
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    87% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+
+}
+
+@keyframes grey {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 0.5;
+    }
+
+    87% {
+        opacity: 0.5;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(5%) scale(1.1);
+        opacity: 0;
+    }
+}
+
+@keyframes text {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    87% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}
+
+//  Style na inne rozdzielczości
+
+@media (orientation:landscape) {
+
+    .team {
+        & img.color {
+
+            right: -3%;
+            height: 66%;
+        }
+
+        & img.grey {
+            bottom: -10%;
+            left: -15%;
+            height: 110%;
+
+        }
+
+        & div.member {
+
+            width: 60%;
+            left: 40%;
+            right: 0;
+        }
+
+    }
+
+}
+
+@media (min-width:1025px) {
+
+    .team {
+
+        & img.color {
+
+            right: -5%;
+            height: 66%;
+        }
+
+        & img.grey {
+            bottom: -15%;
+            left: -10%;
+            height: 130%;
+
+        }
+
+
+        & div.member {
+            width: 60%;
+            left: 37%;
+            right: 0;
+           z-index: 2;
+            h1 {
+                font-size: 8rem;
+            }
+
+            h2 {
+                font-size: 5rem;
+            }
+
+        }
+
+    }
+
+}
